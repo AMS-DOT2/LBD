@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buenos días, Lesly 🌞</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top, #fff1eb, #ace0f9);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .mensaje {
+      position: absolute;
+      top: 20%;
+      width: 100%;
+      text-align: center;
+      color: #333;
+      font-size: 2em;
+      font-weight: bold;
+      padding: 0 10px;
+    }
+
+    .submensaje {
+      font-size: 1.2em;
+      margin-top: 15px;
+      color: #555;
+    }
+
+    .globo {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 60px;
+      background: radial-gradient(circle at 30% 30%, #ff89a6, #e63946);
+      border-radius: 50% 50% 50% 50%;
+      animation: flotar 10s infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+      50% { transform: translateY(-600px) rotate(10deg); opacity: 0.3; }
+      100% { transform: translateY(-1200px) rotate(-5deg); opacity: 0; }
+    }
+
+    .emoji-zapallo {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 3em;
+      animation: latido 1.5s infinite;
+      filter: drop-shadow(0 0 5px orange);
+    }
+
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+
+    .moto-fondo {
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+      opacity: 0.08;
+      max-width: 250px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música -->
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/f2exfw.mp3" type="audio/mpeg">
+    Tu navegador no soporta música automática.
+  </audio>
+
+  <!-- Mensaje -->
+  <div class="mensaje">
+    ¡Buenos días, Lesly! 💛
+    <div class="submensaje">
+      Hoy será un gran día, pero aún mejor porque tú estás en él 🌼<br>
+      (Alguien te lo recuerda con una 🎃 muy especial...)
+    </div>
+  </div>
+
+  <!-- Zapallito animado tipo racha -->
+  <div class="emoji-zapallo">🎃</div>
+
+  <!-- Moto pareja ilustrada -->
+  <img src="https://i.imgur.com/W0YfMie.png" alt="Pareja en moto" class="moto-fondo">
+
+  <!-- Globos -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const globo = document.createElement("div");
+      globo.className = "globo";
+      globo.style.left = Math.random() * 100 + "vw";
+      globo.style.animationDelay = (Math.random() * 5) + "s";
+      globo.style.background = `radial-gradient(circle at 30% 30%, hsl(${Math.random() * 360}, 70%, 80%), hsl(${Math.random() * 360}, 70%, 60%))`;
+      document.body.appendChild(globo);
+    }
+  </script>
+
+</body>
+</html>
